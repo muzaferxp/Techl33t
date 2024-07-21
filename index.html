@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Techl33t Infosystems Private Limited</title>
+    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,600" rel="stylesheet">
+    <link rel="stylesheet" href="dist/css/style.css">
+	<script src="https://unpkg.com/animejs@3.0.1/lib/anime.min.js"></script>
+    <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+   <style>
+     body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #1D2026;
+    color: #ffffff;
+}
+
+.hero-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 50px;
+    background-color: #1D2026;
+    position: relative;
+    overflow: hidden;
+    min-height: 100vh;
+}
+
+.hero-content {
+    max-width: 600px;
+    z-index: 2;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+}
+
+.cta-button {
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    color: white;
+    background-color: #007BFF;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+    background-color: #0056b3;
+}
+
+.hero-animation {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.hero-box {
+    width: 100px;
+    height: 100px;
+    background-color: rgba(0, 123, 255, 0.3);
+    position: absolute;
+    animation: rotateBox 10s linear infinite;
+}
+
+.box-1 {
+    top: 10%;
+    left: 20%;
+    animation-delay: 0s;
+}
+
+.box-2 {
+    top: 50%;
+    left: 10%;
+    animation-delay: 2s;
+}
+
+.box-3 {
+    top: 70%;
+    left: 50%;
+    animation-delay: 4s;
+}
+
+.box-4 {
+    top: 30%;
+    left: 80%;
+    animation-delay: 6s;
+}
+
+.box-5 {
+    top: 60%;
+    left: 70%;
+    animation-delay: 8s;
+}
+
+@keyframes rotateBox {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+} 
+.team {
+    background-color: #F0F4F8; /* Light blue-gray background */
+    padding: 60px 0;
+    position: relative; /* For positioning the curls */
+}
+
+.team-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 1200px; /* Adjusted to a larger max width */
+    margin: 0 auto;
+}
+
+.team-header {
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.section-title {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 2.5em;
+    color: #333333;
+    margin-bottom: 20px;
+}
+
+.section-paragraph {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 1.25em;
+    color: #666666;
+}
+
+.team-members-wrap {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 30px;
+    width: 100%;
+}
+
+.team-member {
+    text-align: center;
+    flex: 1 1 calc(50% - 30px); /* Adjusted to ensure spacing */
+    max-width: calc(50% - 30px); /* Adjusted to ensure spacing */
+    box-sizing: border-box;
+}
+
+.team-member-inner {
+    background: #FFFFFF;
+    padding: 20px;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.team-member-inner:hover {
+    transform: translateY(-10px);
+}
+
+.team-member-photo img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+    object-fit: cover;
+}
+
+.team-member-name {
+    font-size: 1.5em;
+    color: #333333;
+    margin-bottom: 5px;
+}
+
+.team-member-position {
+    font-size: 1.1em;
+    color: #007bff;
+    margin-bottom: 10px;
+}
+
+@media (max-width: 768px) {
+    .team-member {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+}
+
+/* Animated curls */
+.animation-curls {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none; /* Allow clicks to pass through */
+}
+
+.curl {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background: rgba(0, 123, 255, 0.2); /* Light blue */
+    border-radius: 50%;
+    animation: curl-animation 10s linear infinite;
+}
+
+.curl-1 {
+    top: 20%;
+    left: 10%;
+    animation-delay: 0s;
+}
+
+.curl-2 {
+    top: 70%;
+    left: 80%;
+    animation-delay: 5s;
+}
+
+@keyframes curl-animation {
+    0% {
+        transform: translate(0, 0) scale(1);
+    }
+    50% {
+        transform: translate(100px, -100px) scale(1.5);
+    }
+    100% {
+        transform: translate(0, 0) scale(1);
+    }
+}
+
+
+
+
+/* Request a Demo section styles */
+.request-demo {
+    background-color: #1D2026;
+    padding: 60px 0;
+    color: #fff;
+}
+
+.request-demo-header {
+    margin-bottom: 40px;
+}
+
+.request-demo-form-wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.request-demo-form-container {
+    width: 50%;
+    background-color: #2C2F36;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Animation for the form container */
+.request-demo-form-container::before,
+.request-demo-form-container::after {
+    content: '';
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    animation: animateShapes 15s linear infinite;
+}
+
+.request-demo-form-container::before {
+    top: -50px;
+    left: -50px;
+    animation-delay: 0s;
+}
+
+.request-demo-form-container::after {
+    bottom: -50px;
+    right: -50px;
+    animation-delay: 7.5s;
+}
+
+@keyframes animateShapes {
+    0% {
+        transform: scale(0);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.5);
+        opacity: 0.5;
+    }
+    100% {
+        transform: scale(0);
+        opacity: 1;
+    }
+}
+
+.request-demo-form {
+    width: 100%;
+}
+
+.request-demo-form .form-group {
+    margin-bottom: 20px;
+}
+
+.request-demo-form .form-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.request-demo-form .form-group input,
+.request-demo-form .form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #444;
+    border-radius: 4px;
+    background-color: #3C4048;
+    color: #fff;
+}
+
+.request-demo-form .form-group button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.request-demo-form .form-group button:hover {
+    background-color: #0056b3;
+}
+
+
+    </style>
+</head>
+<body class="is-boxed has-animations">
+    <div class="body-wrap">
+        <header class="site-header">
+            <div class="container">
+                <div class="site-header-inner">
+                    <div class="brand header-brand">
+                        <h1 class="m-0">
+							<a href="#">
+								<img class="header-logo-image" src="dist/images/1631311841185.jpg" alt="Logo" style="width: 70px;">
+                            </a>
+                        </h1>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <section class="hero">
+                <div class="container">
+                    <div class="hero-inner">
+						<div class="hero-copy">
+	                        <h1 class="hero-title mt-0">Innovative Software Solutions for a Smarter Future</h1>
+	                        <p class="hero-paragraph">Empowering businesses with cutting-edge Generative AI and more.</p>
+	                        <div class="hero-cta">
+                                <a class="button button-primary" href="#">Book a Demo</a><a class="button" href="#">Get in touch</a>
+                            
+                            </div>
+						</div>
+						<div class="hero-figure anime-element">
+							<svg class="placeholder" width="528" height="396" viewBox="0 0 528 396">
+								<rect width="528" height="396" style="fill:transparent;" />
+							</svg>
+							<div class="hero-figure-box hero-figure-box-01" data-rotation="45deg"></div>
+							<div class="hero-figure-box hero-figure-box-02" data-rotation="-45deg"></div>
+							<div class="hero-figure-box hero-figure-box-03" data-rotation="0deg"></div>
+							<div class="hero-figure-box hero-figure-box-04" data-rotation="-135deg"></div>
+							<div class="hero-figure-box hero-figure-box-05"></div>
+							<div class="hero-figure-box hero-figure-box-06"></div>
+							<div class="hero-figure-box hero-figure-box-07"></div>
+							<div class="hero-figure-box hero-figure-box-08" data-rotation="-22deg"></div>
+							<div class="hero-figure-box hero-figure-box-09" data-rotation="-52deg"></div>
+							<div class="hero-figure-box hero-figure-box-10" data-rotation="-50deg"></div>
+						</div>
+                    </div>
+
+                    <div class="about-section" id="about-section">
+                        <div class="about-content">
+                            <h2>About Us</h2>
+                            <p>At Techl33t, we are dedicated to delivering innovative software solutions that drive business growth and efficiency. Our team of experts specializes in developing state-of-the-art Generative AI chatbots and custom software tailored to your unique needs.</p>
+                            <h3>Our Mission</h3>
+                            <p>To empower businesses with cutting-edge technology, enabling them to achieve their full potential through innovative software solutions. We aim to revolutionize customer interactions, streamline operations, and enhance decision-making processes with our expertise in Generative AI and custom software development.</p>
+                        </div>
+                        <div class="about-animation">
+                            <div class="about-box box-1"></div>
+                            <div class="about-box box-2"></div>
+                            <div class="about-box box-3"></div>
+                            <div class="about-box box-4"></div>
+                            <div class="about-box box-5"></div>
+                        </div>
+                    </div>
+                    
+                    
+                    
+                </div>
+            </section>
+
+            <section id="services-section" class="features section">
+                <div class="container">
+                    <div class="features-inner section-inner has-bottom-divider">
+                        <div class="features-wrap">
+                            <div class="feature text-center is-revealing">
+                                <div class="feature-inner">
+                                    <div class="feature-icon">
+                                        <img src="dist/images/feature-icon-01.svg" alt="Feature 01">
+                                    </div>
+                                    <h4 class="feature-title mt-24">Generative AI Chatbots</h4>
+                                    <p class="text-sm mb-0">Enhance customer engagement with intelligent, conversational AI chatbots that understand and respond to your customers in real-time.</p>
+                                </div>
+                            </div>
+                            <div class="feature text-center is-revealing">
+                                <div class="feature-inner">
+                                    <div class="feature-icon">
+                                        <img src="dist/images/feature-icon-02.svg" alt="Feature 02">
+                                    </div>
+                                    <h4 class="feature-title mt-24">Custom Software Solutions</h4>
+                                    <p class="text-sm mb-0">Tailored software solutions designed to meet the specific needs of your business, improving efficiency and driving growth.</p>
+                                </div>
+                            </div>
+                            <div class="feature text-center is-revealing">
+                                <div class="feature-inner">
+                                    <div class="feature-icon">
+                                        <img src="dist/images/feature-icon-03.svg" alt="Feature 03">
+                                    </div>
+                                    <h4 class="feature-title mt-24">Data Analytics</h4>
+                                    <p class="text-sm mb-0">Unlock valuable insights from your data with our advanced analytics solutions, helping you make informed decisions.</p>
+                                </div>
+                            </div>
+                            <div class="feature text-center is-revealing">
+                                <div class="feature-inner">
+                                    <div class="feature-icon">
+                                        <img src="dist/images/feature-icon-04.svg" alt="Feature 04">
+                                    </div>
+                                    <h4 class="feature-title mt-24">Automation Tools</h4>
+                                    <p class="text-sm mb-0">Streamline your workflows and increase productivity with our automation tools, designed to handle repetitive tasks efficiently.</p>
+                                </div>
+                            </div>
+                            <div class="feature text-center is-revealing">
+                                <div class="feature-inner">
+                                    <div class="feature-icon">
+                                        <img src="dist/images/feature-icon-05.svg" alt="Feature 05">
+                                    </div>
+                                    <h4 class="feature-title mt-24">Cloud Integration</h4>
+                                    <p class="text-sm mb-0">Seamlessly integrate with cloud services to enhance your infrastructure, ensuring scalability and security for your business.</p>
+                                </div>
+                            </div>
+                            <div class="feature text-center is-revealing">
+                                <div class="feature-inner">
+                                    <div class="feature-icon">
+                                        <img src="dist/images/feature-icon-06.svg" alt="Feature 06">
+                                    </div>
+                                    <h4 class="feature-title mt-24">24/7 Support</h4>
+                                    <p class="text-sm mb-0">Our dedicated support team is available around the clock to assist you with any issues or queries you may have.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+
+  
+
+            <section class="team section">
+                <div class="container-sm">
+                    <div class="team-inner section-inner">
+                        <div class="team-header text-center">
+                            <h2 class="section-title mt-0">Meet Our Team</h2>
+                            <p class="section-paragraph mb-0">Our team is composed of dedicated professionals who are passionate about delivering innovative software solutions.</p>
+                        </div>
+                        <div class="team-members-wrap">
+                            <div class="team-member">
+                                <div class="team-member-inner">
+                                    <div class="team-member-photo">
+                                        <center>                                        <img src="dist/images/naushad.jpg" alt="Naushad Vali">
+                                        </center>
+                                    </div>
+                                    <div class="team-member-info">
+                                        <h3 class="team-member-name">Naushad Vali</h3>
+                                        <p class="team-member-position">Co-Founder & CTO, Techl33t</p>
+                                        <a href="https://www.linkedin.com/in/naushadvali" class="team-member-linkedin" target="_blank">
+                                            <i class="fab fa-linkedin"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="team-member">
+                                <div class="team-member-inner">
+                                    <div class="team-member-photo">
+                                        <center>
+                                            <img src="dist/images/survadeep.png" alt="Suvradeep Saha">
+
+                                        </center>
+                                    </div>
+                                    <div class="team-member-info">
+                                        <h3 class="team-member-name">Suvradeep Saha</h3>
+                                        <p class="team-member-position">CEO, Techl33t</p>
+                                        <a href="https://www.linkedin.com/in/suvradeep-saha-a7ba141/" class="team-member-linkedin" target="_blank">
+                                            <i class="fab fa-linkedin"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="animation-curls">
+                    <div class="curl curl-1"></div>
+                    <div class="curl curl-2"></div>
+                </div>
+            </section>
+            
+            
+            <section id="request-demo-section" class="request-demo section">
+                <div class="container">
+                    <div class="request-demo-inner section-inner">
+                        <div class="request-demo-header text-center">
+                            <h2 class="section-title mt-0">Request a Demo</h2>
+                            <p class="section-paragraph mb-0">Fill out the form below to schedule a demo with our team. We're excited to show you how our solutions can help your business.</p>
+                        </div>
+                        <div class="request-demo-form-wrap">
+                            <div class="request-demo-form-container anime-element">
+                                <form id="request-demo-form" class="request-demo-form">
+                                    <div class="form-group">
+                                        <label for="demo-name">Name</label>
+                                        <input type="text" id="demo-name" name="name" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="demo-email">Email</label>
+                                        <input type="email" id="demo-email" name="email" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="demo-message">Message</label>
+                                        <textarea id="demo-message" name="message" rows="4" required></textarea>
+                                    </div>
+                                    <div class="form-group text-center">
+                                        <button type="submit" class="button button-primary">Submit</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            
+            
+        </main>
+
+        <footer class="site-footer">
+            <div class="container">
+                <div class="site-footer-inner">
+                    <div class="brand footer-brand">
+						<a href="#">
+							<img class="header-logo-image" src="dist/images/1631311841185.jpg" alt="Logo" style="width: 50px;">
+						</a>
+                    </div>
+                    <ul class="footer-links list-reset">
+                        <li>
+                            <a href="#about-section">About us</a>
+                        </li>
+                        <li>
+                            <a href="#services-section">Services</a>
+                        </li>
+                        
+                    </ul>
+                    <ul class="footer-social-links list-reset">
+                        
+                        <li>
+                            <a href="https://www.linkedin.com/company/techl33t-infosystems-private-limited/?originalSubdomain=in">
+                                <span class="screen-reader-text">linkedin</span>
+                               Connect with us at.   <i class="fab fa-linkedin"></i>
+
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="footer-copyright">&copy; Techl33t Infosystems Private Limited, all rights reserved</div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+
+    <script src="dist/js/main.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+    // Animation for the form container
+    anime({
+        targets: '.request-demo-form-container',
+        scale: [0.8, 1],
+        opacity: [0, 1],
+        duration: 1000,
+        easing: 'easeOutExpo'
+    });
+
+    // Additional animations for form elements (if desired)
+    anime({
+        targets: '.request-demo-form input, .request-demo-form textarea, .request-demo-form button',
+        opacity: [0, 1],
+        translateY: [20, 0],
+        delay: anime.stagger(100), // Stagger delay for each element
+        duration: 500,
+        easing: 'easeOutQuad'
+    });
+});
+
+    </script>
+</body>
+</html>
